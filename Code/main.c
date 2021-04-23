@@ -205,13 +205,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if (millis_microseconds() >8000000)
-	  {
-	for(int i=0;i<=10;i++)
-	{
-		PWMWRITE(i*10);
-		HAL_Delay(1000);
-	}
+	 //Working on it
 
 	  }
 
