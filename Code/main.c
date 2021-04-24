@@ -92,27 +92,30 @@ long millis_microseconds()
 // PB3  and PB14 are asseignet for MOTOR2.
 
 void forward(int v1,v2)
-{
+{	uint16_t x1 =((v1*4200)/100);
+	uint16_t x2 =((v2*4200)/100);
 	//MOTOR1:
-	htim2.Instance->CCR4=v1;
+	
+	htim2.Instance->CCR4=x1;
 	htim2.Instance->CCR3=0;
 	// MOTORR2:
-	htim2.Instance->CCR2=v2;
+	htim2.Instance->CCR2=x2;
 	htim12.Instance->CCR1=0;
 }
 
 void backward(int v1,v2)
-{
+{	uint16_t x1 =((v1*4200)/100);
+	uint16_t x2 =((v2*4200)/100);
 	//MOTOR1:
 	htim2.Instance->CCR4=0;
-	htim2.Instance->CCR3=v1;
+	htim2.Instance->CCR3=x1;
 	// MOTORR2:
 	htim2.Instance->CCR2=0;
-	htim12.Instance->CCR1=v2;
+	htim12.Instance->CCR1=x2;
 }
 
 void stop()
-{
+{	
 	//MOTOR1:
 	htim2.Instance->CCR4=0;
 	htim2.Instance->CCR3=0;
@@ -121,22 +124,24 @@ void stop()
 	htim12.Instance->CCR1=0;
 }
 void left(int v1,v2)
-{
+{	uint16_t x1 =((v1*4200)/100);
+	uint16_t x2 =((v2*4200)/100);
 	//MOTOR1:
-	htim2.Instance->CCR4=v1;
+	htim2.Instance->CCR4=x1;
 	htim2.Instance->CCR3=0;
 	// MOTORR2:
 	htim2.Instance->CCR2=0;
-	htim12.Instance->CCR1=v2;
+	htim12.Instance->CCR1=x2;
 }
 
 void right(int v1,v2)
-{
+{	uint16_t x1 =((v1*4200)/100);
+	uint16_t x2 =((v2*4200)/100);
 	//MOTOR1:
 	htim2.Instance->CCR4=0;
-	htim2.Instance->CCR3=v1;
+	htim2.Instance->CCR3=x1;
 	// MOTORR2:
-	htim2.Instance->CCR2=v2;
+	htim2.Instance->CCR2=x2;
 	htim12.Instance->CCR1=0;
 }
 
