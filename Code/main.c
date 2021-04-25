@@ -83,7 +83,7 @@ void Send_data(uint8_t buffer)
 	HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sizeof(buffer), HAL_MAX_DELAY);
 }
 
-long millis_microseconds()
+long Microseconds()
 {
 	return( htim5.Instance->CNT );
 }
